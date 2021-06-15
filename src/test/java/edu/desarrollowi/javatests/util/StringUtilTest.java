@@ -1,19 +1,15 @@
 package edu.desarrollowi.javatests.util;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 public class StringUtilTest {
-    public static void main(String[] args) {
-        assertEquals(StringUtil.repeat("hola",3),"holaholahola");
-        if(!StringUtil.repeat("hola",3).equals("holaholahola")){
-            throw new RuntimeException("ERROR");
-        }
 
-        assertEquals(StringUtil.repeat("hola",1),"hola");
+    @Test
+    public void testRepeat(){
 
-    }
+        Assert.assertEquals("holaholahola", StringUtil.repeat("hola",3));
+        Assert.assertEquals("hola", StringUtil.repeat("hola", 1));
 
-    private static void assertEquals(String actual, String expected) {
-        if(!actual.equals(expected)){
-            throw new RuntimeException(actual + "is not equal to expected " + expected);
-        }
     }
 }
