@@ -22,4 +22,23 @@ public class StringUtilTest {
         StringUtil.repeat("hola", -1);
     }
 
+    @Test
+    public void any_string(){
+        Assert.assertFalse(StringUtil.isEmpty("E"));
+    }
+
+    @Test
+    public void empty_string(){
+        Assert.assertTrue(StringUtil.isEmpty(""));
+    }
+    @Test
+    public void null_string(){
+        String string = null;
+        Assert.assertTrue(StringUtil.isEmpty(string));
+    }
+    @Test
+    public void string_with_blank_spaces(){
+        String string = "   ";
+        Assert.assertTrue(StringUtil.isEmpty(string.trim()));
+    }
 }
